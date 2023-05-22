@@ -22,6 +22,7 @@ func (p *ProductsHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		p.getProducts(w, r)
 		return
 	} else if r.Method == http.MethodPost {
+		p.addProduct(w, r)
 		return
 	} else if r.Method == http.MethodPut {
 		reg := regexp.MustCompile(`/([0-9]+)`)
